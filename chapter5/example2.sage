@@ -6,12 +6,15 @@ pr_single = [0.0723, 0.0282, 0.006, 0.1566, 0.0483, 0.0216, 0.0167, 0.0787, 0.04
 # Table 1.1
 pr_single = [0.0804, 0.0154, 0.0306, 0.0399, 0.1251, 0.0230, 0.0196, 0.0549, 0.0726, 0.0016, 0.0067, 0.0414, 0.0253, 0.0709, 0.0760, 0.0200, 0.0011, 0.0612, 0.0654, 0.0925, 0.0271, 0.0099, 0.0192, 0.0019, 0.0173, 0.0009]
 
-# Variables
-scores = []
+def calculate(input, raw=False):
+    # Variables
+    scores = []
 
-# Calculate entropy
-for p in pr_single:
-    scores.append(float(p) * math.log(float(p), 2))
+    # Calculate entropy
+    for p in input:
+        scores.append(float(p) * math.log(float(p), 2))
 
-# Done
-print -1 * sum(scores)
+    # Done
+    return -1.0 * sum(scores) if not raw else scores
+
+print calculate(pr_single)
