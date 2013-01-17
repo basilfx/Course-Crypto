@@ -92,3 +92,28 @@ m = 11111111
 c = power_mod(m, dB, nB)
 
 print "Part 5", m, c
+
+# 
+# Part 6 (page 181)
+#
+n = 99052741
+e = 81119923
+c = 11111111
+m = power_mod(c, e, n)
+
+p = 9733
+q = 10177
+d = 17089915
+d1 = d % (p - 1)
+d2 = d % (q - 1)
+m1 = m % p
+m2 = m % q
+a = 45287650
+b = 53765092
+c1 = m1**d1 % p
+c2 = m2**d2 % q
+c = ((a * c1) + (b * c2)) % n
+
+c1Prime = 8765
+cPr = ((a * c1Prime) + (b * c2)) % n
+print "Part 6", c, cPr, gcd(c - cPr, n) 
