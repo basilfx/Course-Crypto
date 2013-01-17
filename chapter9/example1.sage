@@ -19,16 +19,16 @@ def my_euler_phi(n):
     # Done
     return phi
 
-# Prime factory
-factory = Primes()
+# Create set of all primes
+prime_set = Primes()
 
 #
 # Part 1 (page 148)
 #
 
 # Generate 1200th and 1250th prime number. Note: zero indexing!!
-pB = factory.unrank(1200 - 1)  
-qB = factory.unrank(1250 - 1)
+pB = prime_set.unrank(1200 - 1)  
+qB = prime_set.unrank(1250 - 1)
 nB = pB * qB
 phiB = euler_phi(nB)
 
