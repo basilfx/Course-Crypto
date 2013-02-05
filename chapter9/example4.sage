@@ -1,3 +1,5 @@
+# Pollard Rho
+
 # Create set of all primes
 prime_set = Primes()
 
@@ -5,8 +7,11 @@ prime_set = Primes()
 # Part 1 (page 159)
 #
 
-n = 6700892281
-S = 50
+#n = 6700892281
+#S = 50
+
+n = 1001
+S = 5
 
 # Note that prime 15 is smooth, with respect to S
 print "Part 1", prime_set.unrank(15 - 1), prime_set.unrank(16 - 1)
@@ -16,7 +21,7 @@ product = lambda z: reduce(lambda x, y: x*y, z)
 op = lambda i: prime_set.unrank(i) ** floor(log(n, prime_set.unrank(i)))
 
 # Calculate R
-R = product([ op(i) for i in range(15)])
+R = product([ op(i) for i in range(S)])
 print "Part 1", R
 
 # Factor R
